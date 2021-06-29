@@ -1,6 +1,7 @@
-package package1;
+package view;
 
 import java.util.ArrayList;
+import model.vehicle;
 
 public class view {
 	

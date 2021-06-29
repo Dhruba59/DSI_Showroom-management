@@ -1,4 +1,7 @@
-package package1;
+package controller;
+
+import model.showroom;
+import view.view;
 
 public class controller {
 	private showroom model = new showroom();

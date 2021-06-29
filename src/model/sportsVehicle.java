@@ -1,4 +1,4 @@
-package package1;
+package model;
 
 public class sportsVehicle extends vehicle {
 

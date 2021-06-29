@@ -1,5 +1,6 @@
-package package1;
+package main;
 import java.util.Scanner;
+import controller.controller;
 
 public class main {
 
@@ -51,7 +52,6 @@ public class main {
 			
 			
 		}
-		
 		
 	}
 
