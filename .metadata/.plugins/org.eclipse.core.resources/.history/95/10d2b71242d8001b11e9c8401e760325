@@ -1,0 +1,15 @@
+package one;
+
+public class heavyVehicle extends vehicle {
+
+	public heavyVehicle(int id) {	
+		
+		super(id);
+		super.enginePower = 3000;
+		super.engineType = new String[] {"diesel"};
+		super.tireSize = 300;
+		super.weight = 1000;
+		super.type = "heavy";
+	}
+}
+

@@ -1,0 +1,15 @@
+package one;
+
+public class sportsVehicle extends vehicle {
+
+	public sportsVehicle(int id) {	
+		
+		super(id);
+		super.engineType = new String[] {"oil"};
+		super.turbo = true;
+		super.type = "sports";
+		super.enginePower = 2500;
+		super.tireSize = 250;
+		super.modelNo = "SPORTSDEMO101";
+	}
+}

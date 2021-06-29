@@ -1,0 +1,28 @@
+package one;
+
+import java.util.ArrayList;
+
+public class view {
+	
+	public void showDetailsOfCars (ArrayList<vehicle> vehicleList) {
+		System.out.println("--------------------------------------");
+		for(int i = 0; i < vehicleList.size(); i++) {
+			vehicle v = vehicleList.get(i);
+			System.out.println("    Vehicle id:  "+ v.getId());
+			System.out.println("Model No:  "+ v.getModelNo());
+			System.out.println("Engine Power:  "+ v.getEnginePower());
+			System.out.println("Tire Size:  "+ v.getTireSize());
+			System.out.println("Weight:  "+ v.getWeight());
+			System.out.println("Type:  "+ v.getType());
+			System.out.println("Engine Type:  "+ String.join(", ", v.getEngineType()));
+			System.out.println();
+		}
+		System.out.println("--------------------------------------");
+	}
+	
+	public void showExpectedVisitor(int number) {
+		System.out.println("--------------------------------------");
+		System.out.println("Total number of expected visitor: " + number);
+		System.out.println("---------------------------------------");
+	}
+}

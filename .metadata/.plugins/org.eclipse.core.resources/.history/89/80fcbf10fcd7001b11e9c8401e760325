@@ -1,0 +1,59 @@
+package one;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Iterator;
+
+public class showroom {
+	
+	ArrayList<vehicle> vehicleList = new ArrayList<vehicle>(); 
+	int vehicleCount, visitorCount = 30;
+	int nextId = 0;
+	
+	public void addVehicle(String vehicleType) {
+		
+		vehicle new_vehicle;
+		
+		if(vehicleType == "sports") {
+			this.visitorCount += 20;
+			new_vehicle = new sportsVehicle(nextId);
+		}
+		else if (vehicleType == "heavy") {
+			new_vehicle = new heavyVehicle(nextId);
+		}
+		
+		else {
+			new_vehicle = new vehicle(nextId);
+		}
+		
+		this.vehicleList.add(new_vehicle);
+		this.nextId++;
+	}
+	
+	public void removeVehicle(int id) {
+		for(int i = 0; i < vehicleList.size(); i++) {
+			if(this.vehicleList.get(i).id == id) {
+				if(this.vehicleList.get(i).type == "sports") this.visitorCount -= 20;
+				this.vehicleList.remove(i);
+			}
+		}
+	}
+	
+	public void showDetails() {
+		for(int i = 0; i < vehicleList.size(); i++) {
+			vehicle v = vehicleList.get(i);
+			System.out.println("    Vehicle id:  "+ v.id);
+			System.out.println("Model No:  "+ v.modelNo);
+			System.out.println("Engine Power:  "+ v.enginePower);
+			System.out.println("Tire Size:  "+ v.tireSize);
+			System.out.println("Weight:  "+ v.weight);
+			System.out.println("Type:  "+ v.type);
+			System.out.println("Engine Type:  "+ String.join(", ", v.engineType));
+			System.out.println();
+		}
+	}
+	
+	public void showExpectedVisitor () {
+		System.out.println(this.visitorCount);
+	}
+}

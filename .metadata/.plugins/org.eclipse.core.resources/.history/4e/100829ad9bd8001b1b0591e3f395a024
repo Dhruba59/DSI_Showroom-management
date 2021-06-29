@@ -1,0 +1,22 @@
+package one;
+
+public class controller {
+	private showroom model;
+	private view vieww;
+	
+	public view getView () {
+		return vieww;
+	}
+	
+	public showroom getModel () {
+		return model;
+	}
+	
+	public void showDetails () {
+		vieww.showDetailsOfCars(model.getListOfVehicles());
+	}
+	
+	public void showExpectedVisitor () {
+		vieww.showExpectedVisitor(model.getExpectedVisitor());
+	}
+}

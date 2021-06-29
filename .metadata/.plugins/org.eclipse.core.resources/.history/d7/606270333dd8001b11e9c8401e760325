@@ -1,0 +1,23 @@
+package one;
+
+
+public class vehicle {
+	
+	String[] engineType;
+	String modelNo,type;
+	int enginePower, tireSize;
+	int id, weight;
+	boolean turbo;
+	
+	
+	public vehicle (int id) {
+	
+		this.engineType = new String[] {"oil", "diesel", "gas"};
+		this.type = "normal";
+		this.enginePower = 1500;
+		this.tireSize = 150;
+		this.id = id;
+		this.turbo = false;
+		this.modelNo = "NORMALDEMO101";
+	}
+}

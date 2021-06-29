@@ -1,0 +1,45 @@
+package one;
+import java.util.Scanner;
+
+public class main {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		
+		showroom showrm = new showroom();
+
+		
+		while(true) {
+			System.out.println(" Press 1 for adding vehicle to showroom");
+			System.out.println(" Press 2 for show details of all vehicle in showroom");
+			System.out.println(" Press 3 for remove vehicle from showroom");
+			System.out.println(" Press 4 to see expected number of visitors");
+			
+			int val = Integer.parseInt(scanner.nextLine());
+			if(val == 1) {
+				System.out.println("Press 1 for Sports || 2 for Heavy || 3 for Normal vehicle");
+				int typ = Integer.parseInt(scanner.nextLine());
+				if(typ == 1) showrm.addVehicle("sports");
+				if(typ == 2) showrm.addVehicle("heavy");
+				if(typ == 3) showrm.addVehicle("normal");
+			}
+			
+			else if (val == 2) {
+				showrm.showDetails();
+			}
+			else if (val == 3) {
+				System.out.println("Enter vehicle id to remove it from showroom");
+				int id = scanner.nextInt();
+				showrm.removeVehicle(id);
+			}
+			else if(val == 4)  showrm.showExpectedVisitor();
+			
+			else System.out.println("Please enter a number between 1 and 4");
+		}
+		
+		
+	}
+
+}

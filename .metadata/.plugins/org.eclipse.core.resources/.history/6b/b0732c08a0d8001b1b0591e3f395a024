@@ -1,0 +1,66 @@
+package one;
+
+import java.util.ArrayList;
+
+public class showroom {
+	
+	private ArrayList<vehicle> vehicleList = new ArrayList<vehicle>(); 
+	private int vehicleCount, visitorCount = 30;
+	private int nextId = 0;
+	
+	public void addVehicle(String vehicleType) {
+		
+		try {
+			if(vehicleType == "sports") {
+				this.visitorCount += 20;
+				vehicle new_vehicle = new sportsVehicle(nextId);
+				this.vehicleList.add(new_vehicle);
+			}
+			else if (vehicleType == "heavy") {
+				vehicle new_vehicle = new heavyVehicle(nextId);
+				this.vehicleList.add(new_vehicle);
+			}
+			
+			else if (vehicleType == "normal") {
+				vehicle new_vehicle = new vehicle();
+				this.vehicleList.add(new_vehicle);
+				new_vehicle.setId(nextId);
+			}
+			
+			else System.out.println("please enter a valid value");
+			
+			this.nextId++;
+			System.out.println("New Vehicle added to the showroom");
+		}
+		catch(Throwable e) {
+			e.printStackTrace();
+		}
+				
+	}
+	
+	public void removeVehicle(int id) {
+		for(int i = 0; i < vehicleList.size(); i++) {
+			if(this.vehicleList.get(i).getId() == id) {
+				if(this.vehicleList.get(i).getType() == "sports") this.visitorCount -= 20;				
+				this.vehicleList.remove(i);
+				System.out.println("The vehicle is removed from showroom");
+			}
+		}
+	}
+	
+	public ArrayList<vehicle> getListOfVehicles() {
+		return vehicleList;
+	}
+	
+	public int getExpectedVisitor () {
+		return this.visitorCount;
+	}
+
+	public int getVehicleCount() {
+		return vehicleCount;
+	}
+
+	public void setVehicleCount(int vehicleCount) {
+		this.vehicleCount = vehicleCount;
+	}
+}

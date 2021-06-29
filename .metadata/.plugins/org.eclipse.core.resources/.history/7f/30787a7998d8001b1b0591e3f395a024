@@ -1,0 +1,49 @@
+package one;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Iterator;
+
+public class showroom {
+	
+	ArrayList<vehicle> vehicleList = new ArrayList<vehicle>(); 
+	private int vehicleCount, visitorCount = 30;
+	private int nextId = 0;
+	
+	public void addVehicle(String vehicleType) {
+		
+		vehicle new_vehicle;
+		
+		if(vehicleType == "sports") {
+			this.visitorCount += 20;
+			new_vehicle = new sportsVehicle(nextId);
+		}
+		else if (vehicleType == "heavy") {
+			new_vehicle = new heavyVehicle(nextId);
+		}
+		
+		else {
+			new_vehicle = new vehicle(nextId);
+		}
+		
+		this.vehicleList.add(new_vehicle);
+		this.nextId++;
+	}
+	
+	public void removeVehicle(int id) {
+		for(int i = 0; i < vehicleList.size(); i++) {
+			if(this.vehicleList.get(i).id == id) {
+				if(this.vehicleList.get(i).type == "sports") this.visitorCount -= 20;				
+				this.vehicleList.remove(i);
+			}
+		}
+	}
+	
+	public ArrayList<vehicle> getListOfVehicles() {
+		return vehicleList;
+	}
+	
+	public int getExpectedVisitor () {
+		return this.visitorCount;
+	}
+}
